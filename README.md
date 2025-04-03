@@ -1,68 +1,62 @@
-# Project XYZ
+# Project Covid 19 Cases
 
-**Project XYZ** is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
+**Project Covid 19 Cases** is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
 
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+* Data Set is with 50000 rows and 10 columns so reduced it to 10000 rows and after manipulation added 6 other columns
+
 
 
 ## Business Requirements
-* Describe your business requirements
+* Want to see how many confirmed cases and number of deaths occuring per region and country and what was the moving avrage of 4 days. Number of cases monthwise per region.
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+* Did USA have most cases over time. True the data shows USA had the most cases, validated through plots.
+Was it thursday most cases emerging. True on thursday most cases emerged than rest of the days validated through Box plot.
 
 ## Project Plan
-* Outline the high-level steps taken for the analysis.
-* How was the data managed throughout the collection, processing, analysis and interpretation steps?
+* Explored the whole dataset for missing values and data types  of
+columns. Looked for columns if they have are necessary to stay within the dataset.
+* Downloaded the dataset on computer from Kaggle as csv file in a seperate folder as Raw dataset and loaded in VS code for processing. Once the data was processed, cleaned data was loaded back in seperate folder as clean processed data and transformed data after Feature Engnineering.
 * Why did you choose the research methodologies you used?
 
 ## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+* To see relationsips among number of cases, active and number of deaths per region over time through different plotting methods
 
 ## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
-* How did you use generative AI tools to help with ideation, design thinking and code optimisation?
+* Pandas, Numpy, Seaborn, Matplotlib, Plotly, Feature Engine Encoders and Imputers used. 
+Could not use histograms very much as plotting in Vs code was taking enormous time and histograms were not appearing properly.
+* There were not many categorical columns so from Date column created a new column Day. Fill values of one Categorical column Province/state where many values were NaN so filled them with Unknown. Calculated Moving averages, used groupby and other functions. Used Feature Engineering.
+* The columns in dataset had extreme uneven values not allowing to plot Histograms and Kde plots. The histograms were taking long time to appear. After filtering some columns the heatmap was also no appearing correctly.
+* Used Feature Engineering tools, Ordinal Encoder for categoriacal variables, Winsorizer for outliers numerical for continuous variables. 
 
-## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues?
+## Ethical considerationshttps:
+* So far not many data privacy issues as it was issued by WHO and put on Kaggle.
+* so far no legal issues.
 
 ## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
+* There are 2 columns in dataset Deaths and Recovered could not be shown in Sunburst plot when hovered over the data despite using several techniques and considerable amount of time.
+
 
 ## Development Roadmap
-* What challenges did you face, and what strategies were used to overcome these challenges?
-* What new skills or tools do you plan to learn next based on your project experience? 
+* Main challenges were in plotting different plots, used help with Chatgpt.
+* Need to learn logscaling and when animating in plotly, how to control speed of animation.
 
 ## Main Data Analysis Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+* Pandas, Numpy, Seaborn, Matplotlib, Plotly, Feature Engine pipeline, Encoders and Imputers used.
+example is:
+import seaborn as sns
+sns.kdeplot(data=df, x='Active',hue='WHO Region',ax=axes[0],fill=True,  palette='Set1')
+plt.show()
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
+* Used Code Institute Lms and Chatgpt help for syntactical errors. 
 
 
 ## Acknowledgements (optional)
-* Thank the people who provided support through this project.
+* Special thanks to John and Vasi in Code Institute who provided support and help through this project.
